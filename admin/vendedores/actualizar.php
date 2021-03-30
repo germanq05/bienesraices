@@ -1,7 +1,7 @@
 <?php
 
 require '../../includes/app.php';
-//Anda gi
+//Anda git
 use App\Vendedor;
 
 estaAutenticado();
