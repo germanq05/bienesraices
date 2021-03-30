@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+# Turn on Rewrite Engine
+RewriteEngine on
+# Rewrite rule
+#RewriteRule ^detail detail.php [NC,L]
+# NC makes the rule non case sensitive
+# L  makes the last rule that specific condition will match
+# Rewrite For detail.php?id=1
+RewriteRule ^detail/([0-9a-zA-Z]+) detail.php?id=$1 [NC,L]
+# Rewrite For detail.php?id=1&title=title
+RewriteRule ^detail/([0-9]+)/([0-9a-zA-Z]+) detail.php?id=$1&title=$2 [NC,L]
+</IfModule>
