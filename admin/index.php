@@ -4,6 +4,7 @@ require '../includes/app.php';
 
 estaAutenticado();
 
+//Importo las clases
 use App\Propiedad;
 use App\Vendedor;
 
@@ -42,13 +43,13 @@ incluirTemplate('header', true);
 
 <main class="contenedor seccion">
     <h1 class="titulo">Administrador de Bienes Raices</h1>
-    <?php if (intval($resultado) === 1) : ?>
-        <p class="alerta exito"> Creado Correctamente.</p>
-    <?php elseif (intval($resultado) === 2) : ?>
-        <p class="alerta exito"> Actualizado Correctamente.</p>
-    <?php elseif (intval($resultado) === 3) : ?>
-        <p class="alerta exito"> Eliminado Correctamente.</p>
-    <?php endif ?>
+    <?php 
+        $mensaje = mostrarNotificacion(intval($resultado));
+        if($mensaje){ ?>
+        
+        <p class="alerta exito"> <?php echo s($mensaje); ?> </p>
+
+    <?php } ?>
 
     <a href="/admin/propiedades/crear.php" class="boton boton-verde">Nueva Propiedad</a>
     <a href="/admin/vendedores/crear.php" class="boton boton-amarillo">Nuevo Vendedor</a>

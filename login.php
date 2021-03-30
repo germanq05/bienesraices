@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
             //Verificar si el password es correcto o no
             $auth = password_verify($password, $usuario['password']);
-            if($auth){
+            if(!$auth){
                 //El usuario esta autenticado
                 session_start(); //Iniciar sesion
 

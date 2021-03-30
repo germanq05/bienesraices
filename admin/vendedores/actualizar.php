@@ -30,10 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errores)) {
         $vendedor->guardar();
-
     }
-
-
 }
 
 incluirTemplate('header');
@@ -63,5 +60,5 @@ incluirTemplate('header');
 
 
 <?php
-    incluirTemplate('footer');
+incluirTemplate('footer');
 ?>

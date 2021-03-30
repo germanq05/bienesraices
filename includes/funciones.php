@@ -21,7 +21,8 @@ function estaAutenticado()
     return true;
 }
 
-function debuguear($variable){
+function debuguear($variable)
+{
     echo "<pre>";
     var_dump($variable);
     echo "</pre>";
@@ -29,13 +30,38 @@ function debuguear($variable){
 }
 
 //Escapa el HTML
-function s($html) : string{
+function s($html): string
+{
     $s = htmlspecialchars($html);
     return $s;
 }
 
 //Validar tipo de contenido
-function validarTipoContenido($tipo){
+function validarTipoContenido($tipo)
+{
     $tipos = ['vendedor', 'propiedad'];
     return in_array($tipo, $tipos);
+}
+
+
+//Muestra los mensajes
+function mostrarNotificacion($codigo)
+{
+    $mensaje = '';
+
+    switch ($codigo) {
+        case 1:
+            $mensaje = 'Creado Correctamente';
+            break;
+        case 2:
+            $mensaje = 'Actualizado Correctamente';
+            break;
+        case 3:
+            $mensaje = 'Eliminado Correctamente';
+            break;
+        default:
+            $mensaje = false;
+            break;
+    }
+    return $mensaje;
 }

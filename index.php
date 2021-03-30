@@ -35,7 +35,6 @@ incluirTemplate('header',  $inicio = true);
     <h2 class="titulo">Casas y Departamentos en Venta</h2>
 
     <?php 
-        $limite = 3;
         include 'includes/templates/anuncios.php';
     ?>
 
